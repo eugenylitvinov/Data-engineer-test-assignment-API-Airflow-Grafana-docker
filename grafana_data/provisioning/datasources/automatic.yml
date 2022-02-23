@@ -1,0 +1,32 @@
+apiVersion: 1
+
+#deleteDatasources:
+#  - name: postgresql
+#    orgId: 1
+
+datasources:
+- name: postgresql
+  type: postgres
+#  access: proxy
+  url: postgresql:5432
+  password: bitnami1
+  user: bn_airflow
+  database: bitnami_airflow
+  basicAuth: false
+  basicAuthUser:
+  basicAuthPassword:
+  withCredentials: true
+  isDefault: true
+  jsonData:
+     tlsAuth: false
+     tlsAuthWithCACert: false
+     sslmode: 'disable'
+     postgresVersion: 10
+  secureJsonData:
+    tlsCACert: ""
+    tlsClientCert: ""
+    tlsClientKey: ""
+    password: bitnami1
+  version: 1
+  editable: true
+
